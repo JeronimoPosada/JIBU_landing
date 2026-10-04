@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 // Lee número y mensaje desde variables de entorno (prefijadas con VITE_ para exponer al cliente)
-const WHATSAPP_NUMBER = (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '5733105493708' // formato: 57<numero>
+const WHATSAPP_NUMBER = (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '3105493708' // formato: 57<numero>
 const WHATSAPP_MESSAGE = (import.meta.env.VITE_WHATSAPP_MESSAGE as string) || '¡Hola JIBU! Me interesa conocer cómo pueden ayudar a mi empresa a detectar fugas financieras.'
 
 function WhatsAppIcon() {
