@@ -65,11 +65,13 @@ const server = http.createServer(async (req, res) => {
     // Convert Node request body to Web ReadableStream if present
     const body = ['GET', 'HEAD'].includes(req.method) ? undefined : Readable.toWeb(req)
 
-    const request = new Request(url, {
+    const init = {
       method: req.method,
       headers: req.headers,
-      body,
-    })
+      ...(body ? { body, duplex: 'half' } : {}),
+    }
+
+    const request = new Request(url, init)
 
     const response = await handler.fetch(request)
     // set status and headers
