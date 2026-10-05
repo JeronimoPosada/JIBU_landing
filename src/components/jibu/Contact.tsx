@@ -75,6 +75,12 @@ export function Contact() {
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // Prevent accidental submits originating from non-submit buttons (e.g. select items rendered as buttons)
+    const native = event.nativeEvent as unknown as SubmitEvent | undefined;
+    const submitter = native?.submitter as HTMLElement | null | undefined;
+    // Allow submit only if triggered by the real submit button or if there's no submitter and we're on last step
+    if (submitter && submitter.id !== 'contact-submit') return;
+    if (!submitter && step < fields.length - 1) return;
     
     // Honeypot check
     const formData = new FormData(event.currentTarget);
@@ -136,7 +142,7 @@ export function Contact() {
                   {estimate && <div className="mb-5 border border-line bg-surface p-4 font-mono text-[10px] leading-5 text-muted-foreground"><p className="uppercase tracking-[0.1em] text-flow">Medidor adjunto · simulación</p><p className="mt-1">Ventas mensuales: {estimate.display["Ventas mensuales"]} · Pérdida mensual: {estimate.display["Pérdida mensual"]}</p></div>}
                   <div className="flex items-center justify-between gap-3">
                     <Button type="button" variant="ghost" onClick={() => { setError(""); setStep((value) => Math.max(0, value - 1)); }} disabled={step === 0 || status === "sending"} aria-label="Volver al campo anterior"><ArrowLeft /> Anterior</Button>
-                    {step < fields.length - 1 ? <Button type="button" onClick={next}>Continuar <ArrowRight /></Button> : <Button type="submit" disabled={status === "sending"}>{status === "sending" ? <><LoaderCircle className="animate-spin" /> Enviando</> : <>Enviar solicitud <ArrowRight /></>}</Button>}
+                    {step < fields.length - 1 ? <Button type="button" onClick={next}>Continuar <ArrowRight /></Button> : <Button id="contact-submit" type="submit" disabled={status === "sending"}>{status === "sending" ? <><LoaderCircle className="animate-spin" /> Enviando</> : <>Enviar solicitud <ArrowRight /></>}</Button>}
                   </div>
                 </>
               )}
