@@ -58,7 +58,7 @@ export function WhatsAppButton() {
                 <span className="absolute -bottom-0.5 -right-0.5 size-3 rounded-full border-2 border-surface bg-[#25D366] animate-pulse" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-foreground">JIBU Studio</p>
+                <p className="text-sm font-semibold text-foreground">JIBU</p>
                 <p className="text-[10px] text-[#25D366] font-mono uppercase tracking-wide">● En línea ahora</p>
               </div>
               <button
