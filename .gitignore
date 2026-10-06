@@ -34,5 +34,38 @@ dist-ssr
 # Environment files
 .env
 .env.*
+!.env.example
 .env.local
 .env.production
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.csr
+*.cer
+*.der
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.jwk
+*.pub
+*.secret
+*.token
+*.oauth
+*.bak
+*.db
+*.sqlite
+*.sqlite3
+
+# Local auth / service files
+.npmrc
+.yarnrc
+.pnpm-store
+.vercel
+.netlify
+.firebase
+secrets/
+credentials/
+
