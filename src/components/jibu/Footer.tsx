@@ -46,8 +46,8 @@ export function Footer() {
         </div>
         <div className="mt-14 grid gap-8 border-t border-line pt-7 md:grid-cols-[1fr_auto] md:items-end">
           <div>
-            <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"><span className="size-2 animate-pulse rounded-full bg-flow" aria-hidden="true" />Todos los sistemas operativos</p>
-            <p className="mt-3 text-xs text-muted-foreground">Medellín · Colombia / LATAM</p>
+            <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"><span className="signal-dot" aria-hidden="true" />Todos los sistemas operativos</p>
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Medellín · Colombia / LATAM</p>
           </div>
           <nav aria-label="Enlaces del pie" className="flex flex-wrap gap-x-6 gap-y-3 md:justify-end">
             {links.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{label}</a>)}

@@ -194,7 +194,6 @@ export function FraudLab() {
           </div>
         </div>
 
-        <span id="modulos" className="block scroll-mt-16" />
       </div>
     </section>
   );

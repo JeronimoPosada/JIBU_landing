@@ -69,7 +69,7 @@ export function LedgerHero() {
           </div>
         </div>
 
-        <aside aria-label={t.hero.panelLabel} className="ledger-panel overflow-hidden border border-line bg-panel/94 shadow-ledger">
+        <aside aria-label={t.hero.panelLabel} className="ledger-panel overflow-hidden">
           <div className="flex items-center justify-between border-b border-line px-5 py-4">
             <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground"><span className="signal-dot" /> terminal.verificación</div>
             <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-flow">{t.hero.live}</span>

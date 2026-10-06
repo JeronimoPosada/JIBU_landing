@@ -23,27 +23,26 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "JIBU | Inteligencia financiera en movimiento" },
       { property: "og:description", content: "Automatización operativa e inteligencia financiera para empresas en Colombia y LATAM." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://jibu.studio/" },
-      { property: "og:site_name", content: "JIBU Studio" },
+      { property: "og:url", content: "https://jibu.co/" },
+      { property: "og:site_name", content: "JIBU" },
       { property: "og:locale", content: "es_CO" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "JIBU | Inteligencia financiera en movimiento" },
       { name: "twitter:description", content: "Sistemas de IA que verifican pagos, auditan sobrecostos y automatizan la operación." },
     ],
-    links: [{ rel: "canonical", href: "https://jibu.studio/" }],
+    links: [{ rel: "canonical", href: "https://jibu.co/" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "JIBU Studio",
-        alternateName: "JIBU",
+        name: "JIBU",
         slogan: "Intelligent systems in motion",
-        url: "https://jibu.studio/",
-        logo: "https://jibu.studio/favicon.png",
-        email: "hola@jibu.studio",
+        url: "https://jibu.co/",
+        logo: "https://jibu.co/favicon.svg",
+        email: "hola@jibu.co",
         areaServed: ["CO", "LATAM"],
-        sameAs: ["https://www.linkedin.com/company/jibu-studio", "https://github.com/jibu-studio", "https://www.instagram.com/jibu.studio"],
+        sameAs: ["https://www.linkedin.com/company/jibu-co", "https://github.com/jibu-co", "https://www.instagram.com/jibu.co"],
       }),
     }],
   }),
@@ -53,7 +52,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   useEffect(() => {
     console.log(
-      "%cJIBU%c  intelligent systems in motion\n\n¿Lees consolas por gusto? Nosotros también.\nSi te interesa construir sistemas que atrapan fraude en tiempo real, escríbenos: hola@jibu.studio\n\n> verificando_curiosidad... ✓",
+      "%cJIBU%c  intelligent systems in motion\n\n¿Lees consolas por gusto? Nosotros también.\nSi te interesa construir sistemas que atrapan fraude en tiempo real, escríbenos: hola@jibu.co\n\n> verificando_curiosidad... ✓",
       "font: 600 22px 'Space Grotesk', sans-serif; letter-spacing: 0.2em; color: #22D3EE;",
       "font: 12px 'JetBrains Mono', monospace; color: #F4F6FA;",
     );
@@ -66,7 +65,7 @@ function Index() {
       <Spotlight />
       <BootSequence />
       <LedgerHero />
-      <Suspense fallback={<div className="h-48 border-b border-line bg-surface" aria-hidden="true" />}>
+      <Suspense fallback={<div className="flex min-h-screen flex-col items-center justify-center gap-4 border-b border-line bg-background" aria-hidden="true"><span className="signal-dot" /><p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground animate-pulse">Cargando módulos...</p></div>}>
         <TechnicalEvidence />
         <FraudLab />
         <Modules />

@@ -8,7 +8,7 @@ export const Route = createFileRoute('/seguridad')({
   head: () => ({
     meta: [
       { title: 'Política de Seguridad y Habeas Data | JIBU' },
-      { name: 'description', content: 'Política de seguridad y cumplimiento de Habeas Data de JIBU Studio. Conoce cómo protegemos tu información.' },
+      { name: 'description', content: 'Política de seguridad y cumplimiento de Habeas Data de JIBU. Conoce cómo protegemos tu información.' },
     ],
   }),
   component: Seguridad,
@@ -73,7 +73,7 @@ const sections = [
   {
     icon: Mail,
     title: '9. Contacto de Seguridad y Privacidad',
-    content: 'Para reportes de vulnerabilidades, ejercicio de derechos de Habeas Data, o cualquier consulta sobre esta política, contáctenos en: hola@jibu.studio — Respondemos todas las solicitudes de datos personales dentro de los 10 días hábiles establecidos por la ley.',
+    content: 'Para reportes de vulnerabilidades, ejercicio de derechos de Habeas Data, o cualquier consulta sobre esta política, contáctenos en: hola@jibu.co — Respondemos todas las solicitudes de datos personales dentro de los 10 días hábiles establecidos por la ley.',
   },
 ]
 
@@ -105,7 +105,7 @@ function Seguridad() {
               <div className="flex gap-3">
                 <Shield className="size-5 text-flow shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Esta política aplica a todos los servicios de <strong className="text-foreground">JIBU Studio</strong> y cumple con la{' '}
+                  Esta política aplica a todos los servicios de <strong className="text-foreground">JIBU</strong> y cumple con la{' '}
                   <strong className="text-foreground">Ley 1581 de 2012</strong> de Colombia (Habeas Data) y el{' '}
                   <strong className="text-foreground">Decreto 1377 de 2013</strong> reglamentario.
                 </p>

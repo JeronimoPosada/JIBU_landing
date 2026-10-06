@@ -9,7 +9,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { createLead } from "@/lib/leads.functions";
 import { leadSchema, leadSolutions, type LeadInput } from "@/lib/lead-schema";
 
-// Cambia solo esta URL cuando esté listo el calendario definitivo de JIBU.
 const CALENDAR_URL = "https://cal.com/jibu-p800kt/15min";
 const selectionEvent = "jibu:select-solution";
 const estimateEvent = "jibu:leak-estimate";

@@ -8,7 +8,7 @@ export const Route = createFileRoute('/terminos')({
   head: () => ({
     meta: [
       { title: 'Términos y Condiciones | JIBU' },
-      { name: 'description', content: 'Términos y condiciones de uso de los servicios de JIBU Studio.' },
+      { name: 'description', content: 'Términos y condiciones de uso de los servicios de JIBU.' },
     ],
   }),
   component: Terminos,
@@ -33,7 +33,7 @@ const sections = [
   {
     icon: Copyright,
     title: '4. Propiedad Intelectual',
-    content: 'El servicio y su contenido original, características, funcionalidad, metodologías de detección de fraude y algoritmos son y seguirán siendo propiedad exclusiva de JIBU Studio y sus licenciantes. Nuestros servicios están protegidos por derechos de autor, secreto empresarial y demás propiedad intelectual.',
+    content: 'El servicio y su contenido original, características, funcionalidad, metodologías de detección de fraude y algoritmos son y seguirán siendo propiedad exclusiva de JIBU y sus licenciantes. Nuestros servicios están protegidos por derechos de autor, secreto empresarial y demás propiedad intelectual.',
   },
   {
     icon: AlertTriangle,
@@ -53,7 +53,7 @@ const sections = [
   {
     icon: Mail,
     title: '8. Contacto',
-    content: 'Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos a través de nuestro formulario de contacto o enviando un correo a: hola@jibu.studio',
+    content: 'Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos a través de nuestro formulario de contacto o enviando un correo a: hola@jibu.co',
   },
 ]
 
@@ -83,7 +83,7 @@ function Terminos() {
             {/* Intro */}
             <div className="border border-line rounded-lg p-6 mb-10 bg-surface/50">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Estos términos regulan el acceso y uso de los servicios de <strong className="text-foreground">JIBU Studio</strong>. Al usar nuestros servicios, usted confirma que tiene capacidad legal para aceptar estos términos en nombre propio o de su empresa.
+                Estos términos regulan el acceso y uso de los servicios de <strong className="text-foreground">JIBU</strong>. Al usar nuestros servicios, usted confirma que tiene capacidad legal para aceptar estos términos en nombre propio o de su empresa.
               </p>
             </div>
 

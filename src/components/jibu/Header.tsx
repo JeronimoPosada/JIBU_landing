@@ -11,11 +11,11 @@ export function Header() {
   const links: [string, string][] = [[t.nav.fraud, "#fraude-lab"], [t.nav.modules, "#modulos"], [t.nav.calculator, "#calculadora"], [t.nav.process, "#proceso"], [t.nav.contact, "#contacto"]];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-background/90 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line/40 bg-background/60 backdrop-blur-2xl">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-3 px-5 md:px-10">
-        <a href="#inicio" className="flex shrink-0 items-center gap-3">
-          <img src={logoAsset} alt="Logo de JIBU" className="size-9 rounded-full" />
-          <span className="font-display text-xl tracking-[0.22em] text-foreground">JIBU</span>
+        <a href="#inicio" className="flex shrink-0 items-center gap-3 transition-opacity hover:opacity-80">
+          <img src={logoAsset} alt="Logo de JIBU" className="size-8 rounded-full border border-line/50" />
+          <span className="font-display text-lg tracking-[0.24em] text-foreground">JIBU</span>
         </a>
         <nav aria-label={t.nav.main} className="hidden items-center gap-5 lg:flex xl:gap-7">
           {links.map(([label, href]) => <a key={href} className="nav-link" href={href}>{label}</a>)}

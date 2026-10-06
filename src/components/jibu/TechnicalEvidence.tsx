@@ -39,8 +39,8 @@ export function TechnicalEvidence() {
               transition={{ delay: reduced ? 0 : index * 0.08, duration: 0.35 }}
               className="border-line py-7 sm:odd:border-r sm:pr-6 sm:even:pl-6 lg:border-r lg:px-6 lg:first:pl-0 lg:last:border-r-0"
             >
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground mb-3">{metric.label}</p>
               <p className="font-mono text-xl text-flow md:text-2xl">{metric.value}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{metric.label}</p>
             </motion.div>
           ))}
         </div>

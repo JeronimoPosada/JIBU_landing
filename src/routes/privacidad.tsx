@@ -48,7 +48,7 @@ const sections = [
   {
     icon: Mail,
     title: '7. Contacto',
-    content: 'Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos a través de nuestro formulario de contacto o enviando un correo a: hola@jibu.studio',
+    content: 'Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos a través de nuestro formulario de contacto o enviando un correo a: hola@jibu.co',
   },
 ]
 
@@ -78,7 +78,7 @@ function Privacidad() {
             {/* Intro */}
             <div className="border border-line rounded-lg p-6 mb-10 bg-surface/50">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                En <strong className="text-foreground">JIBU Studio</strong>, su privacidad es fundamental. Esta política describe cómo tratamos sus datos personales en cumplimiento de la{' '}
+                En <strong className="text-foreground">JIBU</strong>, su privacidad es fundamental. Esta política describe cómo tratamos sus datos personales en cumplimiento de la{' '}
                 <strong className="text-foreground">Ley 1581 de 2012 (Colombia)</strong> y demás normativa aplicable en LATAM.
               </p>
             </div>

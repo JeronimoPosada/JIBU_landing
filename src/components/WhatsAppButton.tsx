@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
-// Lee número y mensaje desde variables de entorno (prefijadas con VITE_ para exponer al cliente)
-const WHATSAPP_NUMBER = (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '+573105493708' // formato: 57<numero>
+const WHATSAPP_NUMBER = (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '+573105493708'
 const WHATSAPP_MESSAGE = (import.meta.env.VITE_WHATSAPP_MESSAGE as string) || '¡Hola JIBU! Me interesa conocer cómo pueden ayudar a mi empresa a detectar fugas financieras.'
 
 function WhatsAppIcon() {
@@ -18,7 +17,6 @@ export function WhatsAppButton() {
   const [hasBeenSeen, setHasBeenSeen] = useState(false)
   const reduced = useReducedMotion()
 
-  // Auto-show bubble after 4s if not already interacted
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasBeenSeen) setIsOpen(true)
@@ -49,7 +47,7 @@ export function WhatsAppButton() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.92 }}
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-            className="relative w-72 rounded-2xl border border-line bg-surface shadow-2xl shadow-black/40 overflow-hidden"
+            className="relative w-72 rounded-sm border border-line bg-surface shadow-ledger overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center gap-3 bg-[#25D366]/10 border-b border-[#25D366]/20 px-4 py-3">
@@ -74,7 +72,7 @@ export function WhatsAppButton() {
 
             {/* Message bubble */}
             <div className="px-4 py-4">
-              <div className="rounded-xl rounded-tl-none bg-background border border-line p-3 text-sm text-muted-foreground leading-relaxed max-w-[90%]">
+              <div className="rounded-sm rounded-tl-none bg-background border border-line p-3 text-sm font-mono text-muted-foreground leading-relaxed max-w-[90%]">
                 👋 ¡Hola! ¿Quieres ver cómo JIBU detecta fugas financieras en tu empresa?
                 <p className="mt-1 text-[10px] text-muted-foreground/60 font-mono text-right">Ahora mismo</p>
               </div>
@@ -84,7 +82,7 @@ export function WhatsAppButton() {
             <div className="px-4 pb-4">
               <button
                 onClick={handleChat}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#25D366] hover:bg-[#20bc5a] text-white text-sm font-semibold py-3 transition-colors duration-200"
+                className="w-full flex items-center justify-center gap-2 rounded-sm bg-[#25D366] hover:bg-[#20bc5a] text-white text-xs uppercase tracking-[0.1em] font-mono py-3 transition-colors duration-200"
                 aria-label="Iniciar conversación en WhatsApp"
               >
                 <WhatsAppIcon />

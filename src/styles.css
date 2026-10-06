@@ -4,11 +4,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
-  --font-sans: "Space Grotesk", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  --font-serif: "Instrument Serif", serif;
+/* ──────────────────────────────────────────────
+   Design System Tokens
+   ────────────────────────────────────────────── */
 
+@theme {
+  /* Typography */
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-editorial: "Instrument Serif", Georgia, serif;
+
+  /* Palette: shadcn semantic tokens */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -36,80 +44,194 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
+  /* JIBU semantic palette */
+  --color-flow: hsl(var(--flow));
+  --color-alert: hsl(var(--alert));
+  --color-subtle: hsl(var(--subtle));
+  --color-surface: hsl(var(--surface));
+  --color-panel: hsl(var(--panel));
+  --color-line: hsl(var(--line));
+  --color-alert-soft: var(--alert-soft);
+
+  /* Radii */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  /* Shadows */
+  --shadow-ledger: 0 8px 40px -8px hsla(180, 80%, 40%, 0.12),
+    0 2px 12px -2px hsla(180, 100%, 50%, 0.06);
+  --shadow-glow: 0 0 48px -12px hsla(180, 100%, 50%, 0.18);
+
+  /* Custom easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ──────────────────────────────────────────────
+   Custom Properties
+   ────────────────────────────────────────────── */
 
 @layer base {
   :root {
+    /* Core shadcn tokens */
     --background: 220 20% 5%;
-    --foreground: 0 0% 100%;
+    --foreground: 0 0% 98%;
 
-    --card: 222 84% 4.9%;
+    --card: 222 25% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 84% 4.9%;
+    --popover: 222 25% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 20% 5%;
+    --primary: 185 70% 48%;
+    --primary-foreground: 220 25% 5%;
 
-    --secondary: 217 32% 17%;
+    --secondary: 217 28% 14%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217 28% 14%;
+    --muted-foreground: 215 16% 57%;
 
-    --accent: 217 32% 17%;
+    --accent: 217 28% 14%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 180 100% 50%;
-    
-    --radius: 0.5rem;
-  }
+    --border: 217 24% 14%;
+    --input: 217 24% 14%;
+    --ring: 185 70% 48%;
 
-  .dark {
-    --background: 220 20% 5%;
-    --foreground: 0 0% 100%;
+    --radius: 0.375rem;
 
-    --card: 222 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 20% 5%;
-
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 217 32% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 180 100% 50%;
+    /* JIBU semantic tokens */
+    --flow: 185 70% 48%;
+    --alert: 0 72% 55%;
+    --subtle: 215 12% 38%;
+    --surface: 220 22% 7%;
+    --panel: 222 20% 8%;
+    --line: 217 24% 14%;
+    --alert-soft: hsla(0, 72%, 55%, 0.07);
   }
 }
+
+/* ──────────────────────────────────────────────
+   Global Resets & Defaults
+   ────────────────────────────────────────────── */
 
 @layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    background: hsla(185, 70%, 48%, 0.22);
+    color: hsl(0, 0%, 98%);
+  }
+
+  /* Premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(217, 24%, 18%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(217, 24%, 26%);
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Design System Components
+   ────────────────────────────────────────────── */
+
+@layer components {
+  /* Eyebrow: small uppercase label above section titles */
+  .eyebrow {
+    @apply flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground;
+  }
+
+  /* Signal dot: animated pulsing indicator */
+  .signal-dot {
+    @apply relative inline-block size-2;
+  }
+  .signal-dot::before {
+    content: "";
+    @apply absolute inset-0 rounded-full bg-flow;
+  }
+  .signal-dot::after {
+    content: "";
+    @apply absolute inset-0 animate-ping rounded-full bg-flow opacity-40;
+  }
+
+  /* Nav link: header navigation anchors */
+  .nav-link {
+    @apply relative inline-flex min-h-11 items-center font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground transition-colors duration-200 hover:text-foreground;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-px left-0 h-px w-0 bg-flow transition-[width] duration-300 ease-out;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Ledger panel: frosted-glass data panel */
+  .ledger-panel {
+    @apply rounded-sm border border-line bg-panel/90 shadow-ledger backdrop-blur-xl;
+  }
+
+  /* Spotlight grid: cursor-following light effect */
+  .spotlight-grid {
+    background: radial-gradient(
+      640px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      hsla(185, 70%, 48%, 0.04),
+      transparent 70%
+    );
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Animations
+   ────────────────────────────────────────────── */
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.5s var(--ease-out-expo) both;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.6s var(--ease-out-expo) both;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
