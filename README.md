@@ -90,7 +90,6 @@ JIBU presenta una experiencia orientada a soluciones reales, con contenido de al
 ## Redes sociales
 
 - LinkedIn: https://www.linkedin.com/company/jibu-co
-- GitHub: https://github.com/jibu-studio
 - Instagram: https://www.instagram.com/jibu.co/
 
 ## Contacto
