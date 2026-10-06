@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
         name: "JIBU",
         slogan: "Intelligent systems in motion",
         url: "https://jibu.co/",
-        logo: "https://jibu.co/favicon.svg",
+        logo: "https://jibu.co/logo.png",
         email: "hola@jibu.co",
         areaServed: ["CO", "LATAM"],
         sameAs: ["https://www.linkedin.com/company/jibu-co", "https://github.com/jibu-co", "https://www.instagram.com/jibu.co"],
